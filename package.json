@@ -1,32 +1,71 @@
 {
-  "name": "acl",
-  "version": "0.4.11",
-  "description": "An Access Control List module, based on Redis with Express middleware support",
+  "name": "acl-next",
+  "version": "1.0.0-alpha.0",
+  "description": "Modern TypeScript Access Control List (RBAC) with Redis, MongoDB and in-memory backends. Fork of optimalbits/node_acl.",
   "keywords": [
-    "middleware",
     "acl",
-    "web"
+    "rbac",
+    "authorization",
+    "access-control",
+    "permissions",
+    "roles",
+    "middleware",
+    "express",
+    "redis",
+    "mongodb",
+    "typescript"
   ],
-  "repository": "git://github.com/optimalbits/node_acl.git",
-  "author": "Manuel Astudillo <manuel@optimalbits.com>",
-  "homepage": "https://github.com/optimalbits/node_acl",
+  "license": "MIT",
+  "contributors": [
+    "Manuel Astudillo <manuel@optimalbits.com> (original node_acl author)"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "engines": {
-    "node": ">= 0.10"
-  },
-  "main": "./index.js",
-  "dependencies": {
-    "async": "^2.1.4",
-    "bluebird": "^3.0.2",
-    "lodash": "^4.17.3",
-    "mongodb": "^2.0.47",
-    "redis": "^2.2.5"
-  },
-  "devDependencies": {
-    "mocha": "^3.2.0",
-    "chai": "^3.4.0"
+    "node": ">=18"
   },
   "scripts": {
-    "test": "mocha test/runner.js --reporter spec",
-    "cover": "istanbul cover -- _mocha test/runner.js --reporter spec"
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:unit": "vitest run --dir test/unit",
+    "test:watch": "vitest",
+    "lint": "biome check .",
+    "format": "biome format --write ."
+  },
+  "peerDependencies": {
+    "mongodb": ">=5",
+    "redis": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "mongodb": {
+      "optional": true
+    },
+    "redis": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^20.14.0",
+    "mongodb": "^6.8.0",
+    "redis": "^4.7.0",
+    "testcontainers": "^10.13.0",
+    "tsup": "^8.2.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
   }
 }
