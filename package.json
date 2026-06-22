@@ -16,18 +16,32 @@
     "typescript"
   ],
   "license": "MIT",
+  "author": "Nordin Zahari <vipnordin@gmail.com>",
   "contributors": [
     "Manuel Astudillo <manuel@optimalbits.com> (original node_acl author)"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nordinz7/node_acl.git"
+  },
+  "homepage": "https://github.com/nordinz7/node_acl#readme",
+  "bugs": {
+    "url": "https://github.com/nordinz7/node_acl/issues"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     }
   },
   "files": [
@@ -35,7 +49,7 @@
   ],
   "sideEffects": false,
   "engines": {
-    "node": ">=18"
+    "node": ">=16"
   },
   "scripts": {
     "build": "tsup",
@@ -44,7 +58,12 @@
     "test:unit": "vitest run --dir test/unit",
     "test:watch": "vitest",
     "lint": "biome check .",
-    "format": "biome format --write ."
+    "format": "biome format --write .",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run lint && npm run typecheck && npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "peerDependencies": {
     "mongodb": ">=5",
