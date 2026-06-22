@@ -16,6 +16,8 @@ export { Acl } from "./acl.js";
 export { Acl as default } from "./acl.js";
 export { MemoryBackend } from "./backends/memory.js";
 export type { MemoryTransaction } from "./backends/memory.js";
+export { RedisBackend } from "./backends/redis.js";
+export type { RedisClientLike, RedisMultiLike } from "./backends/redis.js";
 
 export type {
   AclOptions,
