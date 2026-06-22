@@ -14,6 +14,14 @@ export const VERSION = "1.0.0-alpha.0";
 
 export { Acl } from "./acl.js";
 export { Acl as default } from "./acl.js";
+export { aclErrorHandler, aclMiddleware, HttpError } from "./middleware.js";
+export type {
+  AclMiddleware,
+  AclNext,
+  AclRequest,
+  AclResponse,
+  UserIdResolver,
+} from "./middleware.js";
 export { MemoryBackend } from "./backends/memory.js";
 export type { MemoryTransaction } from "./backends/memory.js";
 export { RedisBackend } from "./backends/redis.js";

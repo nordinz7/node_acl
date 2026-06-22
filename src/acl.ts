@@ -1,3 +1,4 @@
+import { type AclMiddleware, type UserIdResolver, aclMiddleware } from "./middleware.js";
 import type {
   AclOptions,
   AllowRule,
@@ -345,6 +346,19 @@ export class Acl<T = unknown> {
       }),
     );
     return result;
+  }
+
+  /**
+   * Express-style middleware that authorizes the current request against this
+   * Acl. See {@link aclMiddleware} for parameter semantics. Pair with
+   * {@link aclErrorHandler} to render the resulting 401/403 errors.
+   */
+  middleware(
+    numPathComponents?: number,
+    userId?: UserId | UserIdResolver,
+    actions?: OneOrMany<Permission>,
+  ): AclMiddleware {
+    return aclMiddleware(this as unknown as Acl, numPathComponents, userId, actions);
   }
 
   // ---------------------------------------------------------------------------
