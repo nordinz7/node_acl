@@ -1,5 +1,11 @@
 # acl-next
 
+[![npm version](https://img.shields.io/npm/v/acl-next.svg)](https://www.npmjs.com/package/acl-next)
+[![npm downloads](https://img.shields.io/npm/dm/acl-next.svg)](https://www.npmjs.com/package/acl-next)
+[![CI](https://github.com/nordinz7/node_acl/actions/workflows/ci.yml/badge.svg)](https://github.com/nordinz7/node_acl/actions/workflows/ci.yml)
+[![license](https://img.shields.io/npm/l/acl-next.svg)](LICENSE)
+[![types](https://img.shields.io/npm/types/acl-next.svg)](https://www.npmjs.com/package/acl-next)
+
 > Modern TypeScript Access Control Lists (ACL / RBAC) for Node.js — with Redis, MongoDB and in-memory backends, and Express middleware.
 
 A maintained, modernized fork of [optimalbits/node_acl](https://github.com/optimalbits/node_acl) (MIT). Same proven model — users → roles → resources → permissions, with role hierarchies — rebuilt as **TypeScript**, **promise-native**, and **zero runtime dependencies**.
