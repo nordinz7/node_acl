@@ -18,6 +18,13 @@ export { MemoryBackend } from "./backends/memory.js";
 export type { MemoryTransaction } from "./backends/memory.js";
 export { RedisBackend } from "./backends/redis.js";
 export type { RedisClientLike, RedisMultiLike } from "./backends/redis.js";
+export { MongoDBBackend } from "./backends/mongodb.js";
+export type {
+  MongoCollectionLike,
+  MongoDbLike,
+  MongoDBBackendOptions,
+  MongoTransaction,
+} from "./backends/mongodb.js";
 
 export type {
   AclOptions,
