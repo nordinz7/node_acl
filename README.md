@@ -171,4 +171,4 @@ The Redis/MongoDB suites spin up real databases with [testcontainers](https://te
 
 ## License
 
-[MIT](LICENSE). Original work © 2011-2013 Manuel Astudillo; modernization © 2026 contributors.
+[MIT](LICENSE). Original work © 2011-2013 Manuel Astudillo; modernization © 2026 Nordin Zahari.
