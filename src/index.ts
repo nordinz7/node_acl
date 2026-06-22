@@ -12,6 +12,9 @@
 
 export const VERSION = "1.0.0-alpha.0";
 
+export { MemoryBackend } from "./backends/memory.js";
+export type { MemoryTransaction } from "./backends/memory.js";
+
 export type {
   AclOptions,
   AllowRule,
