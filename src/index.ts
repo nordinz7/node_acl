@@ -11,3 +11,18 @@
  */
 
 export const VERSION = "1.0.0-alpha.0";
+
+export type {
+  AclOptions,
+  AllowRule,
+  Backend,
+  Buckets,
+  Key,
+  Logger,
+  OneOrMany,
+  Permission,
+  Resource,
+  Role,
+  StoredValue,
+  UserId,
+} from "./types.js";
